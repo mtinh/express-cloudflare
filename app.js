@@ -15,8 +15,6 @@ import updateChannelRoutes from "./src/routes/api-youtube/updateChannelRoutes.js
 import { authMiddleware } from "./src/middleware/authMiddleware.js";
 
 const app = express();
-const PORT = process.env.PORT ?? 3000; // lấy PORT=4000, không được thì lấy port 3000
-console.log(process.env.PORT)
 
 // 0. CORS middleware
 app.use((req, res, next) => {
@@ -75,8 +73,5 @@ app.use("/api/v1", updateChannelRoutes);
 
 
 
+export default app;
 
-
-app.listen(PORT, () => {
-    console.log(`Server: http://localhost:${PORT}`);
-});

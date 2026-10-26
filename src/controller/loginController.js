@@ -1,12 +1,12 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import {ok} from "../error/ApiResponse.js";
+import { ok } from "../error/ApiResponse.js";
 import { getAccountByUsername } from "../models/accountModel.js";
 import Logger from "../utils/logger.js";
 
 export const loginController = async (req, res) => {
     try {
-        const username  = req.body.username;
+        const username = req.body.username;
         const password = req.body.password;
 
         Logger.debug("Debug ứng dụng");
